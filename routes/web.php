@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\tiendaController;
+use App\Http\Controllers\marcaController;
+use App\Http\Controllers\articuloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/velasquez/presentacion', [tiendaController::class,'index']);
+Route::get('/velasquez/articulos', [articuloController::class, 'listadoArticulos']);
+Route::get('/velasquez/marcas', [marcaController::class, 'listadoMarcas']);
+
+
